@@ -1,0 +1,242 @@
+$StrongCyan: hsl(172, 67%, 45%);
+$LighGreen: #0d686d;
+$VeryDarkCyan: hsl(183, 100%, 15%);
+$DarkGrayishCyan: hsl(186, 14%, 43%);
+$GrayishCyan: hsl(184, 14%, 56%);
+$LightGrayishCyan: hsl(185, 41%, 84%);
+$VeryLightGrayishCyan: hsl(189, 41%, 97%);
+$GreenFocus: #56a69b;
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: $LightGrayishCyan;
+  
+  .title {
+    color: $DarkGrayishCyan;
+    font-weight: 800;
+    font-size: 40px;
+    margin: 100px 0 80px 0;
+    text-align: center;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 1200px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 40px;
+
+    .calculator {
+
+      &__title{
+      width: 70%;
+      display: inline-block;
+      }
+
+      &__title-error{
+        width: 25%;
+        display: inline-block;
+        text-align: right;
+        color: #D97C6D;
+        display: none;
+      }
+      margin-right: 80px;
+      width: 50%;
+      color: $DarkGrayishCyan;
+
+      &__input{
+        position: relative;
+        display: flex;
+        align-items: center;
+
+      .calculator__icon {
+        position: absolute;
+        width: 15px;
+        left: 10px;
+      }
+
+      .calculator__input-field {
+        height: 50px;
+        width: 100%;
+        border-radius: 7px;
+        background-color: $LightGrayishCyan;
+        text-align: right;
+        font-size: 35px;
+        font-weight: 600;
+        color: $VeryDarkCyan;
+        border: none;
+        padding: 7px 10px 0 0;
+        outline: none;
+      }
+      .calculator__input-field-error{
+          outline: 3px solid #D97C6D;
+      }
+
+      .calculator__input-field:hover {
+        cursor: pointer;
+      }
+
+      .calculator__input-field:focus {
+        outline: 3px solid $GreenFocus;
+      }
+
+      .calculator__input-field::placeholder{
+        color: #9ebbbd;
+      }
+
+      }
+      &__tips {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+      }
+
+      &__tip {
+        border-radius: 5px;
+        height: 60px;
+        cursor: pointer;
+        box-shadow: none;
+        border: none;
+        transition: 0.3s ease-in-out background-color; 
+      }
+
+
+      &__tip::placeholder{
+        color: #587676;
+      }
+
+      &__tip-green {
+        display: flex;
+        background-color: $VeryDarkCyan;
+        color: hsl(0, 0%, 100%);
+        justify-content: center;
+        font-size: 30px;
+        font-weight: 800;
+        align-items: center;
+      }
+
+      .button-active{
+        background-color: #26C2AD;
+      }
+
+      &__tip-green:hover{
+        background-color: #9FE8DF;
+      }
+
+      &__tip-input {
+        background-color: $LightGrayishCyan;
+        border: none;
+        font-size: 30px;
+        font-weight: 800;
+        text-align: center;
+        width: 100%;
+        border-radius: 5px;
+        height: 60px;
+        box-shadow: none;
+        transition: 0.3s ease-in-out background-color; 
+      }
+
+      &__tip-input:focus {
+        outline: 3px solid $GreenFocus;
+      }
+
+    }
+    .results {
+      border-radius: 15px;
+      background-color: $VeryDarkCyan;
+      padding: 30px;
+      color: $GrayishCyan;
+
+      &__paragraph {
+        display: inline-block;
+        width: 49%;
+        font-size: 16px;
+        font-weight: 800;
+        color: hsl(0, 0%, 100%);
+        &--gray {
+          color: $GrayishCyan;
+        }
+      }
+
+      &__numbers {
+        display: inline-block;
+        text-align: right;
+        font-size: 55px;
+        font-weight: 800;
+        color: #20C4AC;
+        margin: 0;
+        padding: 0;
+      }
+
+      #sign{
+        width: 49%;
+      }
+
+      &__button {
+        width: 100%;
+        height: 60px;
+        font-size: 22px;
+        border-radius: 5px;
+        background-color: $LighGreen;
+        border: none;
+        color: $VeryDarkCyan;
+        margin-top: 170px;
+        transition: 0.3s ease-in-out background-color;
+      }
+      
+      .button-active{
+        background-color: #26C2AD;
+      }
+
+      &__button:hover{
+        background-color: #9FE8DF;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+
+@media screen and (max-width: 1300px) {
+  .card {
+    flex-direction: column;
+    width: 90%;
+
+    .calculator {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+
+    .results {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 680px){
+    .card{
+      padding: 20px;
+      width: 100%;
+      .calculator{
+      &__tips {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+      }
+      }
+      .results{
+        &__numbers{
+          font-size: 45px;
+        } 
+      }
+
+    }
+  }
+
+}

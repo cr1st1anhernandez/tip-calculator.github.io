@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="Css/Styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <title>Tip calculator app</title>
+</head>
+
+<body>
+  <h1 class="title">S P L I<br>T T E R</h1>
+  <div class="card">
+    <div class="calculator">
+      <h2 class="calculator__title">Bill</h2>
+      <div class="calculator__input">
+        <img class="calculator__icon" src="images/icon-dollar.svg" alt="icon of a dollar">
+        <input class="calculator__input-field" id="price" type="text" value="" placeholder="0">
+      </div>
+      <h2 class="calculator__title">Number of People</h2>
+      <h2 class="calculator__title-error" id="error">Invalid number</h2>
+      <div class="calculator__input">
+        <img class="calculator__icon" src="images/icon-person.svg" alt="icon of a user">
+        <input class="calculator__input-field" id="number_of_people" type="text" value="" oninput="validation()" placeholder="0">
+      </div>
+      <h2 class="calculator__title">Select Tip %</h2>
+      <div class="calculator__tips">
+        <button class="calculator__tip calculator__tip-green" type="submit" onclick="percentaje(5)">5%</button>
+        <button class="calculator__tip calculator__tip-green" type="submit" onclick="percentaje(10)">10%</button>
+        <button class="calculator__tip calculator__tip-green" type="submit" onclick="percentaje(15)">15%</button>
+        <button class="calculator__tip calculator__tip-green" type="submit" onclick="percentaje(25)">25%</button>
+        <button class="calculator__tip calculator__tip-green" type="submit" onclick="percentaje(50)">50%</button>
+        <input id="custom" class="calculator__input-field calculator__tip-input" type="text" placeholder="Custom"
+          oninput="customTip()">
+      </div>
+    </div>
+    <div class="results">
+      <p class="results__paragraph">Tip Amount<br><span class="results__paragraph--gray">/ person</span></p>
+      <span class="results__numbers" id="sign">$<span class="results__numbers" id="tipAmount">0.00</span></span>
+      <p class="results__paragraph">Total<br><span class="results__paragraph--gray">/ person</span></p>
+      <span class="results__numbers" id="sign">$<span class="results__numbers" id="total">0.00</span></span>
+      <button id="reset" class="results__button" type="submit" onclick="resetAll()">RESET</button>
+    </div>
+  </div>
+</body>
+<script src="js/main.js"></script>
+
+</html>
